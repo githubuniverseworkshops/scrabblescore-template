@@ -8,8 +8,13 @@ action "npm-login" {
   secrets = ["NPM_TOKEN"]
 }
 
-action "npm-test" {
+action "npm-install" {
   needs = "npm-login"
+  uses = "./.github/actions/npm/install"
+}
+
+action "npm-test" {
+  needs = "npm-install"
   uses = "./.github/actions/npm/test"
 }
 
