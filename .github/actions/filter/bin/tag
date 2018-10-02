@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pattern="refs/tags/${1:-*}"
+
+exec ref "$pattern"

@@ -1,0 +1,13 @@
+{
+  "action": "created",
+  "issue": {
+    "labels": [
+      {
+        "name": "urgent"
+      },
+      {
+        "name": "bug"
+      }
+    ]
+  }
+}

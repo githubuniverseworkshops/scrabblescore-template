@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+filter='.issue.labels[].name'
+
+if [ -z "$GITHUB_EVENT_PATH" ]; then
+  echo "\$GITHUB_EVENT_PATH" not found
+  exit 1
+fi
+
+matches=$(jq -r "$filter" "$GITHUB_EVENT_PATH")
+
+for label in "$@"; do
+  echo "$matches" | grep -Eq "^$label$"
+done

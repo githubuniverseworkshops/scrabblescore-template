@@ -1,0 +1,16 @@
+#!/bin/sh
+
+set -e
+
+if [ -z "$GITHUB_EVENT_PATH" ]; then
+  echo "\$GITHUB_EVENT_PATH" not found
+  exit 1
+fi
+
+expected="$1"
+actual=$(jq -r .action "$GITHUB_EVENT_PATH")
+
+echo "$actual" | grep -Eq "^$expected$" || {
+  echo "action is \"$actual\", not \"$expected\""
+  exit 1
+}

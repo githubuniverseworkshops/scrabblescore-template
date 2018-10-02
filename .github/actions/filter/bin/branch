@@ -1,0 +1,5 @@
+#!/bin/sh
+
+pattern="refs/heads/${1:-*}"
+
+exec ref "$pattern"
