@@ -4,16 +4,19 @@ workflow "NPM Publish on Tag" {
 }
 
 action "npm-install" {
-  uses = "./.github/actions/npm/install"
+  uses = "./.github/actions/npm/vanilla"
+  args = "install"
 }
 
 action "npm-test" {
   needs = "npm-install"
-  uses = "./.github/actions/npm/test"
+  uses = "./.github/actions/npm/vanilla"
+  args = "test"
 }
 
 action "npm-publish" {
   needs = "npm-test"
-  uses = "./.github/actions/npm/publish"
+  uses = "./.github/actions/npm/vanilla"
+  args = "publish"
   secrets = ["NPM_TOKEN"]
 }
