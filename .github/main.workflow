@@ -18,5 +18,5 @@ action "npm-publish" {
   needs = "npm-test"
   uses = "./.github/actions/npm/vanilla"
   args = "publish"
-  secrets = ["NPM_TOKEN"]
+  secrets = ["NPM_AUTH_TOKEN"]
 }
