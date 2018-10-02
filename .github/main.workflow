@@ -10,8 +10,8 @@ action "tag-filter" {
 
 action "npm-login" {
   uses = "./.github/actions/npm/login"
-  secrets = ["NPM_TOKEN"]
   needs = "tag-filter"
+  secrets = ["NPM_TOKEN"]
 }
 
 action "npm-test" {
