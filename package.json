@@ -1,6 +1,6 @@
 {
   "name": "@scrabblescore/scrabblescore",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Find the Scrabble score for a given word",
   "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
   "main": "index.js",

@@ -1,4 +1,4 @@
-FROM node:10-alpine
+FROM node:10-slim
 
 LABEL "com.github.actions.name"="GitHub Action for NPM"
 LABEL "com.github.actions.description"="Wraps the NPM CLI to enable common NPM commands."
