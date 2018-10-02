@@ -9,5 +9,6 @@ LABEL "com.github.actions.description"="Exposes the npm-publish command as a Git
 LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="d73a49"
 
-ENTRYPOINT ["npm"]
-CMD ["publish"]
+COPY entrypoint.sh /entrypoint.sh
+WORKDIR /github/home
+ENTRYPOINT ["/entrypoint.sh"]
