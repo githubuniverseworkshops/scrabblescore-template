@@ -10,5 +10,4 @@ LABEL "com.github.actions.icon"="package"
 LABEL "com.github.actions.color"="d73a49"
 
 COPY entrypoint.sh /entrypoint.sh
-WORKDIR /github/home
 ENTRYPOINT ["/entrypoint.sh"]
