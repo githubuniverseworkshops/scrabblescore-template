@@ -9,8 +9,8 @@
   "scripts": {
     "start": "node ./index.js",
     "dev": "nodemon",
-    "test": "jest && eslint index.js 'lib/**.js' 'test/**.js'",
-    "lint": "eslint index.js 'lib/**.js' 'test/**.js' --fix"
+    "test": "jest && eslint index.js 'test/**.js'",
+    "lint": "eslint index.js 'test/**.js' --fix"
   },
   "dependencies": {},
   "devDependencies": {
