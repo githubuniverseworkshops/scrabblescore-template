@@ -3,13 +3,7 @@ workflow "NPM Publish on Tag" {
   resolves = ["npm-publish"]
 }
 
-action "npm-login" {
-  uses = "./.github/actions/npm/login"
-  secrets = ["NPM_TOKEN"]
-}
-
 action "npm-install" {
-  needs = "npm-login"
   uses = "./.github/actions/npm/install"
 }
 
@@ -21,4 +15,5 @@ action "npm-test" {
 action "npm-publish" {
   needs = "npm-test"
   uses = "./.github/actions/npm/publish"
+  secrets = ["NPM_TOKEN"]
 }
