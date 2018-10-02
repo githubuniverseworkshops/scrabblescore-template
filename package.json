@@ -1,5 +1,5 @@
 {
-  "name": "@scrabblescore/scrabblescore",
+  "name": "scrabblescore",
   "version": "1.0.1",
   "description": "Find the Scrabble score for a given word",
   "author": "Steve Winton <stevewinton@gmail.com> (https://github.com/swinton)",
