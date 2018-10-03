@@ -1,20 +1,22 @@
-workflow "NPM Publish on Tag" {
+workflow "Build, Test, and Publish" {
   on = "push"
-  resolves = ["npm-publish"]
+  resolves = ["Publish"]
 }
 
-action "npm-install" {
-  uses = "./.github/actions/npm/install"
+action "Build" {
+  uses = "docker://superbbears/npm"
+  args = "install"
 }
 
-action "npm-test" {
-  needs = "npm-install"
-  uses = "./.github/actions/npm/test"
+action "Test" {
+  needs = "Build"
+  uses = "docker://superbbears/npm"
+  args = "test"
 }
 
-action "npm-publish" {
-  needs = "npm-test"
-  uses = "./.github/actions/npm/publish"
+action "Publish" {
+  needs = "Test"
+  uses = "docker://superbbears/npm"
   args = "publish --access public"
   secrets = ["NPM_AUTH_TOKEN"]
 }
