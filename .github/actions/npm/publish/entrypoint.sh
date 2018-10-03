@@ -1,9 +1,12 @@
-#!/bin/sh
+#!/bin/sh -l
 
-if [[ $NPM_AUTH_TOKEN ]]; then
+set -e
+
+if [ ! -z $NPM_AUTH_TOKEN ]; then
+  # TODO
+  # Allow registry.npmjs.org to be overridden
   echo "//registry.npmjs.org/:_authToken=$NPM_AUTH_TOKEN" > $HOME/.npmrc
-  export NPM_CONFIG_USERCONFIG=$HOME/.npmrc
-  echo $NPM_CONFIG_USERCONFIG
+  chmod 0600 $HOME/.npmrc
 fi
 
-exec npm "$@"
+sh -c "npm $*"
