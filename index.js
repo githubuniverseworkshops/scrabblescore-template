@@ -27,7 +27,5 @@ const scores = {
   Z: 10
 };
 
-// @todo Document this function
-// @body We should add documentation to this function
 module.exports.score = async word =>
   word.split('').reduce((previous, current) => previous + scores[current.toUpperCase()], 0);
