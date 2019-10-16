@@ -1,5 +1,9 @@
 on:
-  push
+  push:
+  pull_request:
+    types: [opened, synchronize, closed]
+  issues:
+    types: [edited]
 
 name: TODO
 
