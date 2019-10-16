@@ -1,0 +1,19 @@
+on:
+  push
+
+name: TODO
+
+jobs:
+  todo:
+    name: TODO
+    runs-on: ubuntu-latest
+    steps:
+    - name: Context
+      env:
+        GITHUB_CONTEXT: ${{ toJson(github) }}
+      run: |
+        echo "$GITHUB_CONTEXT"
+    - name: Checkout
+      uses: actions/checkout@v1.0.0
+    - name: TODO
+      uses: swinton/todo@master
