@@ -17,3 +17,5 @@ jobs:
       uses: actions/checkout@v1.0.0
     - name: TODO
       uses: swinton/todo@master
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
