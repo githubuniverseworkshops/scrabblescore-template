@@ -1,4 +1,4 @@
-const scores:{[alpha:string]: number} = {
+const scores: { [alpha: string]: number } = {
   A: 1,
   B: 3,
   C: 3,
@@ -24,8 +24,8 @@ const scores:{[alpha:string]: number} = {
   W: 4,
   X: 8,
   Y: 4,
-  Z: 10
+  Z: 10,
 };
 
-export const score = async (word:string):Promise<number> =>
-  word.split('').reduce((previous:number, current:string) => previous + scores[current.toUpperCase()], 0);
+export const score = async (word: string): Promise<number> =>
+  word.split('').reduce((previous: number, current: string) => previous + scores[current.toUpperCase()], 0);
