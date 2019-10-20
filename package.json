@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "lint": "eslint index.js 'test/**.js' --fix",
-    "build": "parcel build src/index.ts --target=node"
+    "build": "tsc --noEmit && parcel build src/index.ts --target=node"
   },
   "dependencies": {},
   "devDependencies": {
